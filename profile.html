@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Navbar</title>
+  <!-- Bootstrap CSS CDN link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .navbar {
+        padding: 15px 170px;
+        background: var(--prim-gradient, linear-gradient(90deg, #E31C9C 0%, #AA44BC 32.22%, #3940ED 100%));
+    }
+    .navbar .navbar-nav .nav-link {
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px; /* 175% */
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
+    }
+    .navbar-brand img {
+        width: 200px;
+    }
+    .section {
+        display: flex;
+        padding: 3.75rem 5.9375rem;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+        background-color: rgb(37, 35, 35);
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-row-title {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+        color: #212529;
+        font-family: Montserrat;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 700;
+    }
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 3rem;
+    }
+    .form-row .form-group {
+      margin: 0 10px;
+    }
+    .form-row .form-group input {
+      width: 23.5rem; /* Adjust input width */
+      border: none;
+      border-bottom: 1px solid #ccc;
+      outline: none;
+      transition: border-color 0.3s ease-in-out;
+    }
+    .form-row .form-group input:focus {
+        box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.3); /* Change color and size of the focus outline */
+        border-color: #212529; /* Change border color on focus */
+    }
+    .form-row .form-group button {
+        display: flex;
+        padding: 0.5625rem 1.08125rem 0.6875rem 1.0625rem;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-top: -10px;
+        border-radius: 1rem;
+        background: var(--prim-gradient, linear-gradient(90deg, #E31C9C 0%, #AA44BC 32.22%, #3940ED 100%));
+        box-shadow: 10px 10px 10px 0px rgba(186, 186, 186, 0.41);
+        color: #FFF;
+        font-family: Montserrat;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.75rem; /* 175% */
+        letter-spacing: 0.3125rem;
+        text-transform: uppercase;
+    }
+    .section-title {
+        color: #FFF;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 2.58125rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 3.125rem; /* 121.065% */
+    }
+    .text-center {
+        color: #253DF3;
+        text-align: center;
+        font-family: Montserrat;
+        font-size: 1.66875rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.75rem; /* 104.869% */
+    }
+    .form-class {
+        background-color: white;
+        padding: 3rem;
+        align-items: flex-start;
+        border-radius: 25px;
+    }
+    /* Footer styles */
+    /* Footer styles */
+    .footer {
+        background-color: #212529; /* Footer background color */
+        padding: 20px 0; /* Footer padding */
+    }
+
+    /* Flexbox for center alignment */
+    .footer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .row {
+      width: 100%;
+    }
+
+    .footer-left,
+    .footer-right {
+        width: 100%; /* Equal width for both sections */
+        text-align: center; /* Center-align text */
+    }
+
+    /* Adjust the styles for the logo and additional info */
+    .footer-left img {
+      width: 14.6875rem;
+      height: 4.625rem;
+      margin-bottom: 10px; /* Margin below the logo */
+    }
+
+    .footer-left p {
+      color: #999;
+      text-align: center;
+      font-family: Montserrat;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.625rem; /* 162.5% */
+    }
+
+    .heading-text {
+      color: #253DF3;
+      text-align: center;
+      font-family: Montserrat;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.625rem; /* 162.5% */
+    }
+    .footer-text {
+      color: #999;
+      text-align: center;
+      font-family: Montserrat;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.625rem; /* 162.5% */
+    }
+
+    @media screen and (max-width: 1320px) {
+  
+        .form-row .form-group button {
+          margin-top: 20px;
+        }
+    }
+
+    @media screen and (max-width: 992px) {
+        .navbar {
+            padding: 15px 50px;
+            background: var(--prim-gradient, linear-gradient(90deg, #E31C9C 0%, #AA44BC 32.22%, #3940ED 100%));
+        }
+        .form-row .form-group button {
+          margin-top: 10px;
+        }
+    }
+
+    @media screen and (max-width: 573px) {
+        .navbar {
+            padding: 15px 10px;
+            background: var(--prim-gradient, linear-gradient(90deg, #E31C9C 0%, #AA44BC 32.22%, #3940ED 100%));
+        }
+        .section {
+          padding: 0;
+        }
+        .form-row .form-group input {
+          width: 18rem;
+        }
+        .footer {
+          padding-top: 20px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"> <img src="./public/logogrand-1@2x.png" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-items">
+        <a class="nav-link" href="#">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Analyse gratuite</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Questions fréquentes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Accès client</a>
+      </li>
+    </ul>
+    <!-- You can add other elements like a search form, buttons, etc., here -->
+  </div>
+</nav>
+
+<section class="section">
+    <div class="container">
+      <h2 class="section-title">Start growing your Instagram account now!</h2>
+      <h4 class="text-center">There are only <span class="font-weight-bold">132</span> places left, don't miss yours!</h4>
+      <form class="form-class">
+        <div class="form-row-title">
+            <p>Personal Information</p>
+        </div>
+        <div class="form-row">
+            <div class="form-group" style="flex: 1;">
+                <input type="email" class="form-control" placeholder="Email" >
+            </div>
+            <div class="form-group" style="flex: 1;">
+                <input type="text" class="form-control" placeholder="Instagram Account">
+            </div>
+            <div class="form-group" style="flex: 1;">
+                <button type="submit" class="btn btn-primary" style="border: none;">
+                    Continue
+                    <img style="margin-left: 20px;" src="./public/arrow.png" alt="">
+                </button>
+            </div>
+        </div>
+        
+    </form>
+    
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Left side: Logo and additional info -->
+                <div class="footer-left">
+                  <img src="./public/logogrand-1@2x.png" alt="Logo" class="logo-footer">
+                  <p class="rights">© InstaBoom - Targeted instagram Growth</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- Right side: Text -->
+                <div class="footer-right">
+                  <p class="heading-text"> Working Hours</p>
+                  <p class="footer-text">Lunes a jueves from 9:00 a.m. to 6:00 p.m. Friday from 9:00 a.m. to 3:00 p.m.</p>
+                  <p class="heading-text"> Address</p>
+                  <p class="footer-text">Calle de Sta Engracia, 108. Cuarto Interior I. 28003 . Madrid</p>
+                  <p class="heading-text">Phone</p>
+                  <p class="footer-text">+010000000000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and jQuery CDN links -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
